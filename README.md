@@ -5,7 +5,4 @@
 2. To add person face details run train_and_collect_images.py 
 3. To classify person wearing mask and not run final_mask_module.py file
 
-x-special/nautilus-clipboard
-copy
-file:///home/pankaj/Downloads/IMG_20201108_163209.jpg
 
