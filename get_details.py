@@ -2,8 +2,9 @@ def details(Id):
     import pandas as pd
     df=pd.read_csv("./data.csv")
     data=df.values
-    unque_ids=list(data[:,0])
-    row_index=unque_ids.index(Id)
+    unique_ids=list(data[:,0])
+    print(unique_ids)
+    row_index=unique_ids.index(Id)
     return data[row_index]
 # check=details(312)
 # print(check)

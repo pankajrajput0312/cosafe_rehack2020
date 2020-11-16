@@ -12,6 +12,7 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
     import cv2
     import os
     (h, w) = frame.shape[:2]
+    
     blob = cv2.dnn.blobFromImage(frame, 1.0, (224, 224),
                                  (104.0, 177.0, 123.0))
 
@@ -83,6 +84,7 @@ def function():
     import time
     import cv2
     import os
+    import pandas as pd
     from face_recognize_correct import testing
     # load our serialized face detector model from disk
     prototxtPath=r"/home/pankaj/Desktop/merge_project/face_detector/deploy.prototxt"
@@ -136,10 +138,12 @@ def function():
                     image=gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
                     # cv2.imshow("response_voiletergray",image)
                     Id, confidence=testing(image)
+                    
                     if(check==False):
                         check=True
+
                         from sms_send import send_sms
-                        
+                        from add_challan_details_incsv import check
                         
                         send_sms(9315630275,Id)
                     print(Id, confidence)
